@@ -13,10 +13,6 @@ const readContacts = async () => {
   return contacts;
 };
 
-function listContacts() {
-  return readContacts();
-}
-
 async function getContactById(contactId) {
   const contacts = await readContacts();
   const contact = contacts.filter(({ id }) => {
@@ -28,6 +24,10 @@ async function getContactById(contactId) {
   }
 
   return contact;
+}
+
+function listContacts() {
+  return readContacts();
 }
 
 async function removeContact(contactId) {
